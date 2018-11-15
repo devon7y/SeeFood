@@ -26,6 +26,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         blurBar.layer.cornerRadius = 35
         blurBar.clipsToBounds = true
+        blurBar.isHidden = true
+        
+        hotdogLabel.text = ""
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -60,9 +63,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             
             if let firstResult = results.first {
                 if firstResult.identifier.contains("hotdog") {
+                    self.blurBar.isHidden = false
                     self.hotdogLabel.text = "Hotdog"
+                    self.navigationItem.title = ""
+                    self.navigationController?.navigationBar.barTintColor = UIColor.green
                 } else {
+                    self.blurBar.isHidden = false
                     self.hotdogLabel.text = "Not a hotdog"
+                    self.navigationItem.title = ""
+                    self.navigationController?.navigationBar.barTintColor = UIColor.red
                 }
             }
             
