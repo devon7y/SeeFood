@@ -21,10 +21,38 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wfy-GX-re1">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gXp-MX-hie">
+                                <rect key="frame" x="10" y="582" width="355" height="75"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ecm-gN-vVX">
+                                    <rect key="frame" x="0.0" y="0.0" width="355" height="75"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not a hotdog" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lch-wy-mtc">
+                                            <rect key="frame" x="21" y="8" width="313" height="59"/>
+                                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="50"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="lch-wy-mtc" firstAttribute="top" secondItem="ecm-gN-vVX" secondAttribute="top" constant="8" id="Ga6-BU-2rx"/>
+                                        <constraint firstAttribute="trailing" secondItem="lch-wy-mtc" secondAttribute="trailing" constant="21" id="Keh-SR-uGd"/>
+                                        <constraint firstItem="lch-wy-mtc" firstAttribute="leading" secondItem="ecm-gN-vVX" secondAttribute="leading" constant="21" id="dIN-uC-Sci"/>
+                                        <constraint firstAttribute="bottom" secondItem="lch-wy-mtc" secondAttribute="bottom" constant="8" id="fd3-dJ-Asm"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="CEh-wc-HBy"/>
+                                </constraints>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gXp-MX-hie" secondAttribute="bottom" constant="10" id="5I2-nt-k02"/>
                             <constraint firstItem="Wfy-GX-re1" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="DDm-oE-Ui9"/>
+                            <constraint firstItem="gXp-MX-hie" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="HHj-ae-1Rm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gXp-MX-hie" secondAttribute="trailing" constant="10" id="HSv-30-5Nr"/>
                             <constraint firstItem="Wfy-GX-re1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="UC2-XV-nrD"/>
                             <constraint firstItem="Wfy-GX-re1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="dif-z8-eJI"/>
                             <constraint firstItem="Wfy-GX-re1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="w22-AK-4Sn"/>
@@ -39,6 +67,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="blurBar" destination="gXp-MX-hie" id="84D-vH-wsB"/>
+                        <outlet property="hotdogLabel" destination="lch-wy-mtc" id="hkr-n8-hCR"/>
                         <outlet property="imageView" destination="Wfy-GX-re1" id="a5B-PJ-9tP"/>
                     </connections>
                 </viewController>
